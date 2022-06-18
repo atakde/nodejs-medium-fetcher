@@ -43,6 +43,16 @@ exports.getArticles = async (request, response, next) => {
               .join("")}
           </ul>
         `);
+      } else if (responseType === "svg") {
+        let svg = '<svg width="500" height="250" xmlns="http://www.w3.org/2000/svg">';
+        svg += '<rect x="0" y="0" width="500" height="250" fill="transparent" />';
+        svg += '<foreignobject x="0" y="0" width="500" height="250"><body xmlns="http://www.w3.org/1999/xhtml">';
+        svg += '<ul>';
+        articles.slice(0, limit).map((article) => {
+          svg += `<li><a href="${article.link}">${article.title}</a></li>`;
+        });
+        svg += '</ul></body></foreignobject></svg>';
+        return response.status(200).send(svg);
       }
     });
   } catch (error) {
