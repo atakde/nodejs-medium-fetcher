@@ -7,6 +7,10 @@
   GET /?username={username}&limit={limit}&responseType={responseType}
 ```
 
+```http
+  https://nodejs-medium-fetcher.vercel.app/?username=atakde&limit=5&responseType=svg
+```
+
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `username`      | `string` | **Required** |
