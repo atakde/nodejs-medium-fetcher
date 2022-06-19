@@ -16,8 +16,8 @@
 
 ## Example
 ```raw
-![Alt text here](https://nodejs-medium-fetcher.vercel.app/?username=atakde&limit=3&responseType=svg)
+![Alt text here](https://nodejs-medium-fetcher.vercel.app/?username=atakde&limit=3&responseType=svg)(https://medium.com/@atakde)
 ```
 ## Demo
 
-![Alt text here](https://nodejs-medium-fetcher.vercel.app/?username=atakde&limit=3&responseType=svg)
+[![Medium Articles](https://nodejs-medium-fetcher.vercel.app/?username=atakde&limit=3&responseType=svg)](https://medium.com/@atakde)
