@@ -44,14 +44,20 @@ exports.getArticles = async (request, response, next) => {
           </ul>
         `);
       } else if (responseType === "svg") {
-        let svg = '<svg width="500" height="250" xmlns="http://www.w3.org/2000/svg">';
-        svg += '<rect x="0" y="0" width="500" height="250" fill="transparent" />';
-        svg += '<foreignobject x="0" y="0" width="500" height="250"><body xmlns="http://www.w3.org/1999/xhtml">';
-        svg += '<ul>';
-        articles.slice(0, limit).map((article) => {
-          svg += `<li><a href="${article.link}">${article.title}</a></li>`;
+        let svg =
+          '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">';
+        let svgY = 20;
+        articles.slice(0, limit).forEach((article) => {
+          svg += `<a href="${article.link}">`;
+          svg += `<text x="10" y="${svgY}">${article.title.replace(
+            "&",
+            ""
+          )}</text>`;
+          svg += "</a>";
+          svgY += 20;
         });
-        svg += '</ul></body></foreignobject></svg>';
+        svg += "</svg>";
+        response.setHeader("Content-Type", "image/svg+xml");
         return response.status(200).send(svg);
       }
     });
