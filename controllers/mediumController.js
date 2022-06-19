@@ -1,6 +1,7 @@
 const axios = require("axios");
 const xml2js = require("xml2js");
 const mediumFeedURL = "https://medium.com/feed/@";
+const { sendResponse } = require("./responseController");
 
 exports.getArticles = async (request, response, next) => {
   const { username, limit, responseType } = request.query;
@@ -29,38 +30,7 @@ exports.getArticles = async (request, response, next) => {
         };
       });
 
-      if (responseType === "json") {
-        return response.status(200).send(articles.slice(0, limit));
-      } else if (responseType === "html") {
-        return response.status(200).send(`
-          <ul>
-            ${articles
-              .slice(0, limit)
-              .map(
-                (article) =>
-                  `<li><a href="${article.link}">${article.title}</a></li>`
-              )
-              .join("")}
-          </ul>
-        `);
-      } else if (responseType === "svg") {
-        let svg =
-          '<svg xmlns="http://www.w3.org/2000/svg" width="500" height="150">';
-        let svgY = 20;
-        svg += '<style type="text/css">text { font: 500 14px "Segoe UI", Ubuntu, Sans-Serif; fill: #81a1c1; } circle {fill: blue;}</style>';
-        articles.slice(0, limit).forEach((article) => {
-          svg += `<a href="${article.link}">`;
-          svg += `<circle cx="10" cy="${svgY - 4}" r="3"/><text x="20" y="${svgY}">${article.title.replace(
-            "&",
-            ""
-          )}</text>`;
-          svg += "</a>";
-          svgY += 20;
-        });
-        svg += "</svg>";
-        response.setHeader("Content-Type", "image/svg+xml");
-        return response.status(200).send(svg);
-      }
+      return sendResponse(response, responseType, articles, limit);
     });
   } catch (error) {
     next(error);
