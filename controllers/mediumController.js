@@ -45,11 +45,12 @@ exports.getArticles = async (request, response, next) => {
         `);
       } else if (responseType === "svg") {
         let svg =
-          '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">';
+          '<svg xmlns="http://www.w3.org/2000/svg" width="500" height="150">';
         let svgY = 20;
+        svg += '<style type="text/css">text { font: 500 14px "Segoe UI", Ubuntu, Sans-Serif; fill: #81a1c1; } circle {fill: blue;}</style>';
         articles.slice(0, limit).forEach((article) => {
           svg += `<a href="${article.link}">`;
-          svg += `<text x="10" y="${svgY}">${article.title.replace(
+          svg += `<circle cx="10" cy="${svgY - 4}" r="3"/><text x="20" y="${svgY}">${article.title.replace(
             "&",
             ""
           )}</text>`;
