@@ -16,7 +16,7 @@
 
 ## Example
 ```raw
-![Alt text here](https://nodejs-medium-fetcher.vercel.app/?username=atakde&limit=3&responseType=svg)(https://medium.com/@atakde)
+![Alt text here](https://nodejs-medium-fetcher.vercel.app/?username=atakde&limit=5&responseType=svg)(https://medium.com/@atakde)
 ```
 ## Demo
 
