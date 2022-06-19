@@ -20,4 +20,4 @@
 ```
 ## Demo
 
-[![Medium Articles](https://nodejs-medium-fetcher.vercel.app/?username=atakde&limit=3&responseType=svg)](https://medium.com/@atakde)
+[![Medium Articles](https://nodejs-medium-fetcher.vercel.app/?username=atakde&limit=5&responseType=svg)](https://medium.com/@atakde)
