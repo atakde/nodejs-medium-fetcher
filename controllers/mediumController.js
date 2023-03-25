@@ -27,6 +27,8 @@ exports.getArticles = async (request, response, next) => {
         return {
           title: item.title[0],
           link: item.link[0].replace(/\?source.*/, ""),
+          date: item.pubDate[0],
+          categories: item.category,
         };
       });
 
