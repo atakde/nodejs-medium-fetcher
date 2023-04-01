@@ -3,6 +3,16 @@ const xml2js = require("xml2js");
 const mediumFeedURL = "https://medium.com/feed/@";
 const { sendResponse } = require("./responseController");
 
+// find first image in the body of the article
+const findImage = (body) => {
+  const imgRegex = /<img.*?src="(.*?)"/;
+  const imgSrc = body.match(imgRegex);
+  if (imgSrc) {
+    return imgSrc[1];
+  }
+  return null;
+};
+
 exports.getArticles = async (request, response, next) => {
   const { username, limit, responseType } = request.query;
 
@@ -35,6 +45,7 @@ exports.getArticles = async (request, response, next) => {
           date: item.pubDate[0],
           categories: item.category,
           shortDescription: shortDescription,
+          featuredImage: findImage(body),
         };
       });
 
