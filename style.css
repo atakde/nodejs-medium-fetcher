@@ -1,0 +1,101 @@
+        /* Set box-sizing to border-box */
+        * {
+            box-sizing: border-box;
+        }
+
+
+        /* Set body margin and padding to 0 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Style the header */
+        .gradient-text {
+            font-size: 2.4rem;
+            text-align: center;
+            background: -webkit-linear-gradient(45deg, #6B46C1, #8257E5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .github-color {
+            font-size: 2.4rem;
+            text-align: center;
+            color: #222222;
+        }
+
+        /* Center content */
+        .center-input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"] {
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            border-radius: 0.3rem;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+            width: 100%;
+            max-width: 20rem;
+        }
+
+        .create-button {
+            font-size: 1.2rem;
+            background-color: #6B46C1;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #8257E5;
+        }
+
+       .form-control {
+            flex: 1;
+            border: none;
+            padding: 0.5rem;
+        }
+
+       .create-button {
+            font-size: 1.2rem;
+            background-color: #6B46C1;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+        .copy-button {
+            font-size: 0.8rem;
+            background-color: #6B46C1;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border-radius: 10px;
+        }
+        
+        .widget-code {
+            color: #ad0000;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
