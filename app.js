@@ -2,9 +2,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const errorController = require("./controllers/errorController");
 const cors = require("cors");
+const path = require('path');
 const PORT = 3000;
 
 const app = express();
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // enable cors for all origins
 app.use(cors());
