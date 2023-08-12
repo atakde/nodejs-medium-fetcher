@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Medium Widget for GitHub</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+</head>
+
+<body>
+    <main>
+        <div class="center-input">
+            <h1><span class="gradient-text">Medium Widget for </span><span class="github-color">GitHub</span></h1>
+            <label for="medium-username">Medium username</label>
+            <input type="text" id="medium-username">
+            <label for="medium-list">How many articles should you list?</label>
+            <input type="text" id="medium-list-quantity">
+            <button class="create-button" type="submit" id="create-widget">Create Widget</button>
+            <br>
+            <strong id="create-widget-text" style="display: none;">Widget markdown code:</strong>
+            <code id="widget-code-area" class="widget-code" style="display: none;" ></code>
+        </div>
+    </main>
+</body>
+<script src="utils.js"></script>
+
+</html>
