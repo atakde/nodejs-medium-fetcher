@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const errorController = require("./controllers/errorController");
 const cors = require("cors");
 const path = require('path');
@@ -13,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 // Implement body parser
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Routes
 const routes = require("./routes/mediumRoutes");
