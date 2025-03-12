@@ -27,7 +27,13 @@ exports.getArticles = async (request, response, next) => {
 
   try {
     const feedURL = `${mediumFeedURL}${username}`;
-    const { data } = await axios.get(feedURL);
+    const { data } = await axios.get(feedURL, {
+      headers: {
+        "Content-Type": "application/xml",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      },
+    });
+    console.log(data);
     const parser = new xml2js.Parser();
     parser.parseString(data, (err, result) => {
       if (err) {
