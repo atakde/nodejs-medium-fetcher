@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@sparticuz/chromium-min':
+    specifier: ^119.0.0
+    version: 119.0.2
   axios:
     specifier: ^0.27.2
     version: 0.27.2
@@ -65,6 +68,19 @@ packages:
       - bare-buffer
       - react-native-b4a
       - supports-color
+    dev: false
+
+  /@sparticuz/chromium-min@119.0.2:
+    resolution: {integrity: sha512-66ztqT2MScSzbK3Jv6tViEqc2prgKLOX2lst2l89GlKl64Y4Mh72ZlEppjkXybjAVNb1B5IqFVtq67t++En9kA==}
+    engines: {node: '>= 16'}
+    dependencies:
+      follow-redirects: 1.15.6
+      tar-fs: 3.1.1
+    transitivePeerDependencies:
+      - bare-abort-controller
+      - bare-buffer
+      - debug
+      - react-native-b4a
     dev: false
 
   /@tootallnate/quickjs-emscripten@0.23.0:
