@@ -2,6 +2,7 @@ const puppeteer = require("puppeteer");
 const UserAgent = require("user-agents");
 const xml2js = require("xml2js");
 const mediumFeedURL = "https://medium.com/feed/@";
+const chromium = require("@sparticuz/chromium");
 const { sendResponse } = require("./responseController");
 
 // find first image in the body of the article
@@ -30,14 +31,10 @@ exports.getArticles = async (request, response, next) => {
     const feedURL = `${mediumFeedURL}${username}`;
 
     const browser = await puppeteer.launch({
-      headless: true,
-      args: [
-        "--no-sandbox",
-        "--disable-setuid-sandbox",
-        "--disable-dev-shm-usage",
-        "--disable-accelerated-2d-canvas",
-        "--disable-gpu",
-      ],
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
     });
 
     try {
